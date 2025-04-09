@@ -46,5 +46,11 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
     }
 
+    @Override
+    public void deleteUser(Integer id) {
+//        userRepository.findById(Long.valueOf(id)).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Invalid user id" + id));
+        userRepository.deleteById(Long.valueOf(id));
+    }
+
 
 }
